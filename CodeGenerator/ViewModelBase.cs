@@ -16,7 +16,6 @@ namespace CodeGenerator
         #endregion Constructor
 
 #if DEBUG
-
         /// <summary>
         /// Useful for ensuring that ViewModel objects are properly garbage collected.
         /// </summary>

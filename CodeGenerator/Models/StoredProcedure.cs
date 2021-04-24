@@ -227,66 +227,18 @@ namespace CodeGenerator
                 {
                     var query = $@"SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES ";
                     // if (!string.IsNullOrEmpty(searchTerm)) query += $"WHERE ROUTINE_NAME LIKE '{searchTerm}'";
-
-                    // Bins
-                    //query += @" where routine_name in ('deleteBinLocation','getBinLocation','validateBinLocation','selectBinLocationsDynamic','updateBinLocation','selectBinLocationsAll','addBinLocation','getBinLocations',
-                    //                                   'getBinLocationItems','addBinReplenDetail','updateBinReplenDetail','deleteBinReplenDetail','getBinReplenDetail','getBinReplenGenItem','getBinReplenInvMaster','addBinReplenMaster',
-                    //                                   'deleteBinReplenMaster','getBinReplenMaster','updateBinReplenMaster','addBinReplenMove','updateBinReplenMove','deleteBinReplenMove','getBinReplenMove','addBinReplenNote',
-                    //                                   'deleteBinReplenNote','getBinReplenNote','updateBinReplenNote','addBinReplenPrint','deleteBinReplenPrint','getBinReplenPrint','updateBinReplenPrint','addBinType','deleteBinType',
-                    //                                   'getBinType','getBinTypesAll','updateBinType','addBkrNotifTran','deleteBkrNotifTran','getBkrNotifTran','getBkrNotifTransByOrder','updateBkrNotifTran')";
-
-                    query +=
-                        @" where routine_name in  ('addInventoryPersonalizationTemplate','addPersonalizationTemplate','addPersonalizationTemplateProperty','deletePersonalizationTemplate','deletePersonalizationTemplateProperty','getPersonalizationTemplate','getPersonalizationTemplateDetails','selectPersonalizationTemplatesAll','updatePersonalizationTemplate','updatePersonalizationTemplateProperty')";
-
-                    
-                                               /* ('addFreightTable','updateFreightTable','addFreightDetail','deleteFreightTable','deleteFreightDetail','getFreightTable','getFreightDetail','updateFreightDetail',
-                                                       'addFreightDetail','deleteFreightDetail','getFreightDetail','updateFreightDetail','updatePromoShippingCharge','getPromoShippingCharge','getPromoShipping',
-                                                       'addPromoShippingCharge','deletePromoShippingCharge','updatePromoShippingPgc','getPromoShippingPgc','deletePromoShippingPgc','addPromoShippingPgc','addPromoShipping',
-                                                       'updatePromoShipping','deletePromoShipping','selectPromoShippingsDynamic','getPromoShippingMethod','updatePromoShippingMethod','addPromoShippingMethod','deletePromoShippingMethod',
-                                                       'selectPromoShippingsAll','addPromoShippingCharge','deletePromoShippingCharge','getPromoShippingCharge','updatePromoShippingCharge','addPromoShippingMethod',
-                                                       'deletePromoShippingMethod','getPromoShippingMethod','updatePromoShippingMethod','addPromoShippingPgc','deletePromoShippingPgc','getPromoShippingPgc','updatePromoShippingPgc',
-                                                       'addInventoryRestrictedShipping','addUpdateRestrictedShipping','deleteInventoryRestrictedShipping','deleteRestrictedShipping','getInventoryRestrictedShipping',
-                                                       'getInventoryRestrictedShippingDestinations','getRestrictedShipping','getRestrictedShippingCodeAll','updateInventoryRestrictedShipping','addCpsShipBoxImport',
-                                                       'updateCpsShipBoxImport','getCpsShipBoxImport','getCPSShipBoxImportList','deleteCpsShipBoxImport','updateShipBoxImport','getShipBoxImport','getShipBoxImportsList',
-                                                       'addShipBoxImport','deleteShipBoxImport','addDivisionShipCarrier','addShipCarrier','deleteDivisionShipCarrier','deleteShipCarrier','getDivisionShipCarrier',
-                                                       'getShipCarrier','updateDivisionShipCarrier','updateShipCarrier','addShipConfirmTran','deleteShipConfirmTran','getShipConfirmTran','getShipConfirmTranByOrder',
-                                                       'updateShipConfirmTran','getShipmentBox','deleteShipmentBoxDetail','addShipmentBoxDetail','getShipmentBoxDetail','updateShipmentBoxDetail','usp_caGetShipmentClasses',
-                                                       'deleteShipmentBox','updateShipmentBox','addShipmentBox','addShipmentBox','addShipmentBoxDetail','deleteShipmentBox','deleteShipmentBoxDetail','getShipmentBox',
-                                                       'getShipmentBoxDetail','updateShipmentBox','updateShipmentBoxDetail','addShipmentBoxDetail','deleteShipmentBoxDetail','getShipmentBoxDetail','updateShipmentBoxDetail',
-                                                       'addDivisionShipMethod','addDivisionShipMethodToHold','addShipMethod','addShipMethodMapping','addSwitchShipMethod','addVendorShipMethods','deleteDivisionShipMethod',
-                                                       'deleteDivisionShipMethodToHold','deleteShipMethod','deleteshipMethodMapping','deleteSwitchShipMethod','deleteVendorShipMethods','getDivisionShipMethod',
-                                                       'getDivisionShipMethodsToHold','getShipMethod','getShipMethodByAcctSysId','getShipMethodMapping','getShipMethodMappingList','getSwitchShipMethod','getThirdPartyShipMethodIds',
-                                                       'getVendorShipMethods','selectShipMethodsDynamic','selectSwitchShipMethodsDynamic','selectVendorShipMethodsDynamic','updateDivisionShipMethod','updateDivisionShipMethodToHold',
-                                                       'updateShipMethod','updateSwitchShipMethod','updateVendorShipMethods','addShipMethodMapping','deleteshipMethodMapping','getShipMethodMapping','getShipMethodMappingList',
-                                                       'updateShiptoDetailPacking','assignShiptoDetailBins','addShiptoDetail','updateShiptoDetail','getShiptoDetail','deleteShiptoDetail','updateShiptoDetailPacking','addShiptoMaster',
-                                                       'deleteShiptoMaster','getShipToMaster','getShiptoMasterPacking','updateShiptoMaster','updateShiptoMasterPacking','UpdateShipToMasterPrintFlag','usp_getShipToMaster',
-                                                       'getShiptoMasterPacking','updateShiptoMasterPacking','addShiptoPrintHist','addShiptoPrintHistCalcPrintNum','deleteShiptoPrintHist','getShiptoPrintHist','updateShiptoPrintHist',
-                                                       'getShiptoSerialNumList','addShipZone','calcShipZone','deleteShipZone','getShipZone','selectShipZonesAll','updateShipZone','addSwitchShipMethod','deleteSwitchShipMethod',
-                                                       'getSwitchShipMethod','selectSwitchShipMethodsDynamic','updateSwitchShipMethod','addThirdPartyShippingMethod','deleteThirdPartyShippingMethod','getThirdPartyShippingMethod',
-                                                       'selectThirdPartyShippingMethodsAll','updateThirdPartyShippingMethod','addTransitTime','deleteTransitTime','getTransitTime','selectTransitTimesAll','updateTransitTime')";
-                    */
-
-                    // Division
-                    // query += @" where routine_name in ('getDivision','getDivisionalBinQty','getDivisionCustomerStatusMethodToHold','getDivisionLock','getDivisionPaymeth','getDivisionShipCarrier','getDivisionShipMethod','getDivisionShipMethodToHold','getDivisionUserDef','getDivisionWarehouse','getDonotMailDataExtractList','getExceptionLog','getExtPoLineDetail','getExtPoMaster','getFinderFile')";
-
-                    // Inventory
-                    //query += @" where routine_name in ('getAssetType','getBaseItem','getBaseOption','getBaseOptionGroup','getInvAdjustReason','getInvAttributeImport','getInvBin','getInvBinQty','getInvCountLock','getInvCountMaster','getInvCountryListMatrixWrapper','getInvCountSheet','getInvCountSheetDetail','getInvCrossRef','getInvDataOptionsImport','getInventoryAsset','getInventoryAttribute','getInventoryAttributeDef','getInventoryAttributeOption','getInventoryBox','getInventoryNote','getInventoryPersonalizationTemplate','getInventoryPriority','getInventoryRestrictedDestinationList','getInventoryRestrictedShippingCode','getInventoryReturnProduct','getInventoryTransaction','getInventoryVendorRC','getInvExtPoDetail','getInvImportQty','getInvImportRelatedItem','getInvItem','getInvListER','getInvMaster','getInvPoDetail','getInvPrice','getInvPriceGroupListMatrixWrapper','getInvPriceImport','getInvQty','getInvShipSurcharge','getInvTransBinDetail','getInvTransCostDetail','getInvTransfer','getInvTransferDetail','getInvTransferMove','getInvTransferNote','getInvTransferPrint','getInvTransferReceipt','getInvUmMultiplier','getInvUserDef','getInvVendor','getInvVendorImport','getKit','getKitComponent','getKitOption','getKitOptionDetail','getKitPrice','getKitRule','getKitRuleDetail','getKitStaticImport','getMonthlyInvHist','getPriceGroup','getPriceList','getPriceListPromo','getPriceListPromoTypeList','getPricePromoList','getPrintBatch','getPrintBatchDetail','getProductClass','getProductClassAttribute','getProductClassList','getProductGroup','getProductGroupGL','getProductInfoDataExtractList','getProductSku','getRelatedItem','getRelationType','getSerialTemplate','getSkuHistory','getSkuHistoryMonth','getSkuHistoryPoDetail','getSkuKitList','getSourceCode','getSourceCodeDataExtractList','getSourceCurve','getSourceCurveTemplate','getSourceCurveTemplateDetail','getTaxCode','getTaxRate','getUnitOfMeasure','getVendor','getVendorContact','getVendorNote','getVendorPo','getVendorTypeList','getWarehouse','getWarehouseAisle','getWarehouseAisleImport','getWeeklyInvHist')";
-                    //query += @" where routine_name in ('deleteAssetType','deleteBaseItem','deleteBaseOption','deleteBaseOptionGroup','deleteInvAdjustReason','deleteInvAttributeImport','deleteInvBin','deleteInvBinQty','deleteInvCountLock','deleteInvCountMaster','deleteInvCountryListMatrixWrapper','deleteInvCountSheet','deleteInvCountSheetDetail','deleteInvCrossRef','deleteInvDataOptionsImport','deleteInventoryAsset','deleteInventoryAttribute','deleteInventoryAttributeDef','deleteInventoryAttributeOption','deleteInventoryBox','deleteInventoryNote','deleteInventoryPersonalizationTemplate','deleteInventoryPriority','deleteInventoryRestrictedDestinationList','deleteInventoryRestrictedShippingCode','deleteInventoryReturnProduct','deleteInventoryTransaction','deleteInventoryVendorRC','deleteInvExtPoDetail','deleteInvImportQty','deleteInvImportRelatedItem','deleteInvItem','deleteInvListER','deleteInvMaster','deleteInvPoDetail','deleteInvPrice','deleteInvPriceGroupListMatrixWrapper','deleteInvPriceImport','deleteInvQty','deleteInvShipSurcharge','deleteInvTransBinDetail','deleteInvTransCostDetail','deleteInvTransfer','deleteInvTransferDetail','deleteInvTransferMove','deleteInvTransferNote','deleteInvTransferPrint','deleteInvTransferReceipt','deleteInvUmMultiplier','deleteInvUserDef','deleteInvVendor','deleteInvVendorImport','deleteKit','deleteKitComponent','deleteKitOption','deleteKitOptionDetail','deleteKitPrice','deleteKitRule','deleteKitRuleDetail','deleteKitStaticImport','deleteMonthlyInvHist','deletePriceGroup','deletePriceList','deletePriceListPromo','deletePriceListPromoTypeList','deletePricePromoList','deletePrintBatch','deletePrintBatchDetail','deleteProductClass','deleteProductClassAttribute','deleteProductClassList','deleteProductGroup','deleteProductGroupGL','deleteProductInfoDataExtractList','deleteProductSku','deleteRelatedItem','deleteRelationType','deleteSerialTemplate','deleteSkuHistory','deleteSkuHistoryMonth','deleteSkuHistoryPoDetail','deleteSkuKitList','deleteSourceCode','deleteSourceCodeDataExtractList','deleteSourceCurve','deleteSourceCurveTemplate','deleteSourceCurveTemplateDetail','deleteTaxCode','deleteTaxRate','deleteUnitOfMeasure','deleteVendor','deleteVendorContact','deleteVendorNote','deleteVendorPo','deleteVendorTypeList','deleteWarehouse','deleteWarehouseAisle','deleteWarehouseAisleImport','deleteWeeklyInvHist')";
-                    //query += @" where routine_name in ('getAssetType','getBaseItem','getBaseOption','getBaseOptionGroup','getInvAdjustReason','getInvAttributeImport','getInvBin','getInvBinQty','getInvCountLock','getInvCountMaster','getInvCountryListMatrixWrapper','getInvCountSheet','getInvCountSheetDetail','getInvCrossRef','getInvDataOptionsImport','getInventoryAsset','getInventoryAttribute','getInventoryAttributeDef','getInventoryAttributeOption','getInventoryBox','getInventoryNote','getInventoryPersonalizationTemplate','getInventoryPriority','getInventoryRestrictedDestinationList','getInventoryRestrictedShippingCode','getInventoryReturnProduct','getInventoryTransaction','getInventoryVendorRC','getInvExtPoDetail','getInvImportQty','getInvImportRelatedItem','getInvItem','getInvListER','getInvMaster','getInvPoDetail','getInvPrice','getInvPriceGroupListMatrixWrapper','getInvPriceImport','getInvQty','getInvShipSurcharge','getInvTransBinDetail','getInvTransCostDetail','getInvTransfer','getInvTransferDetail','getInvTransferMove','getInvTransferNote','getInvTransferPrint','getInvTransferReceipt','getInvUmMultiplier','getInvUserDef','getInvVendor','getInvVendorImport','getKit','getKitComponent','getKitOption','getKitOptionDetail','getKitPrice','getKitRule','getKitRuleDetail','getKitStaticImport','getMonthlyInvHist','getPriceGroup','getPriceList','getPriceListPromo','getPriceListPromoTypeList','getPricePromoList','getPrintBatch','getPrintBatchDetail','getProductClass','getProductClassAttribute','getProductClassList','getProductGroup','getProductGroupGL','getProductInfoDataExtractList','getProductSku','getRelatedItem','getRelationType','getSerialTemplate','getSkuHistory','getSkuHistoryMonth','getSkuHistoryPoDetail','getSkuKitList','getSourceCode','getSourceCodeDataExtractList','getSourceCurve','getSourceCurveTemplate','getSourceCurveTemplateDetail','getTaxCode','getTaxRate','getUnitOfMeasure','getVendor','getVendorContact','getVendorNote','getVendorPo','getVendorTypeList','getWarehouse','getWarehouseAisle','getWarehouseAisleImport','getWeeklyInvHist')";
-                    /*
-                   
-('addInventoryPersonalizationTemplate
-','addPersonalizationTemplate  
-','addPersonalizationTemplateProperty  
-','deletePersonalizationTemplate   
-','deletePersonalizationTemplateProperty   
-','getPersonalizationTemplate  
-','getPersonalizationTemplateDetails   
-','selectPersonalizationTemplatesAll   
-','updatePersonalizationTemplate   
-','updatePersonalizationTemplateProperty')
-
-    */
+                  /*  query +=
+                        @" where routine_name in 
+                        ('addInventoryPersonalizationTemplate',
+                          'addPersonalizationTemplate',
+                          'addPersonalizationTemplateProperty',
+                          'deletePersonalizationTemplate',
+                          'deletePersonalizationTemplateProperty',
+                          'getPersonalizationTemplate',
+                          'getPersonalizationTemplateDetails',
+                          'selectPersonalizationTemplatesAll',
+                          'updatePersonalizationTemplate',
+                          'updatePersonalizationTemplateProperty')"; */
 
                     command.CommandType = CommandType.Text;
                     command.CommandText = searchTerm;
