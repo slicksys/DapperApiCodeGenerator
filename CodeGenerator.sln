@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGenerator", "CodeGenerator\CodeGenerator.csproj", "{10B1F98E-287C-4893-BCD2-97B7B7CFA9DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModulesGenerator", "..\..\..\Users\christopherl\Documents\Visual Studio 2015\Projects\ModulesGenerator\ModulesGenerator\ModulesGenerator.csproj", "{3510DCEA-638C-4021-A924-BF26134B6CE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10B1F98E-287C-4893-BCD2-97B7B7CFA9DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10B1F98E-287C-4893-BCD2-97B7B7CFA9DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10B1F98E-287C-4893-BCD2-97B7B7CFA9DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10B1F98E-287C-4893-BCD2-97B7B7CFA9DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3510DCEA-638C-4021-A924-BF26134B6CE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3510DCEA-638C-4021-A924-BF26134B6CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3510DCEA-638C-4021-A924-BF26134B6CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3510DCEA-638C-4021-A924-BF26134B6CE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://vmtfs:8080/tfs/defaultcollection
+		SccProjectUniqueName0 = CodeGenerator\\CodeGenerator.csproj
+		SccProjectName0 = CodeGenerator
+		SccAuxPath0 = http://vmtfs:8080/tfs/defaultcollection
+		SccLocalPath0 = CodeGenerator
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

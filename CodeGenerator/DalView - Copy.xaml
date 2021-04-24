@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="CodeGenerator.DalView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:CodeGenerator.ViewModels"
+             d:DesignHeight="600"
+             d:DesignWidth="1200"
+             mc:Ignorable="d" >
+    <!--xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"-->
+    <UserControl.DataContext>
+        <viewModels:DalViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="34" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0">
+
+            <!-- FILTER -->
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="FilterText" Margin="5,5,5,5" TextWrapping="Wrap"  Text="{Binding SearchFilterText}" TabIndex="1" Width="250" />
+                <Button x:Name="GetProcs" Content="Get" Command="{Binding GetProcedureList}" IsEnabled="True" Margin="5" HorizontalAlignment="Right" TabIndex="2" />
+            </StackPanel>
+
+            <!-- LEFT COL CONTROLS -->
+            <StackPanel Orientation="Vertical">
+                <!--<Button x:Name="GenerateSingleButton" Margin="5" Command="{Binding GenerateCommand}" Content="Generate Single" IsDefault="False" TabIndex="3"/>-->
+                <Button x:Name="GenerateAllButton" Margin="5,15,5,5" Command="{Binding GenerateAllCommand}" Content="Generate All" IsDefault="True" TabIndex="4" />
+                <!--<Button x:Name="CopyToClipbourdButton"  Margin="5" Content="Copy To Clipboard" IsDefault="True" TabIndex="5"/>-->
+
+                <CheckBox x:Name="SelectAllProcsCheckbox" Content="Select All" Margin="5,15,0,0" FontWeight="Bold" Command="{Binding SelectAllProcs}" TabIndex="6"/>
+                <ListBox x:Name="ProcedureNames" 
+                         ItemsSource="{Binding StoredProcedures, Mode=TwoWay}"
+                         SelectedItem="{Binding SelectedStoredProcedure, Mode=TwoWay}"
+                         SelectedValuePath="Name"
+                         MaxHeight="800" Margin="5,15,5,5"
+                         MinHeight="200">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" /> 
+                                <Label Content="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </StackPanel>
+        </StackPanel>
+
+        <!-- CODE WINDOWS -->
+        <TabControl x:Name="CodeTabs" Grid.Row="2" Grid.Column="1" >
+            <TabControl.Resources>
+                <Style TargetType="TabPanel">
+                    <Setter Property="HorizontalAlignment" Value="Right"/>
+                    <Setter Property="Margin" Value="0,0,30,0"/>
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="Interfaces" TabIndex="7">
+              <StackPanel>
+                  <Button x:Name="CopyToClipbourdButton2" Command="ApplicationCommands.Copy" Margin="5" Content="Copy To Clipboard"  TabIndex="5"/>
+                  <ScrollViewer  VerticalScrollBarVisibility="Visible" >
+                        <TextBox TabIndex="1" Text="{Binding Code}"  Background="NavajoWhite" BorderThickness="0"  Margin="10,10,10,10"/>
+                  </ScrollViewer>
+              </StackPanel>
+            </TabItem>
+            <TabItem Header="Repos" TabIndex="8">
+                <StackPanel>
+                    <ToolBar>
+                        <Button Content="Select All" Command="ApplicationCommands.SelectAll"  />
+                        <Separator />
+                        <Button Content="Cut" Command="ApplicationCommands.Cut" />
+                        <Button Content="Copy" Command="ApplicationCommands.Copy"/>
+                        <Button Content="Paste" Command="ApplicationCommands.Paste"/>
+                        <Separator />
+                        <Button Content="SaveAs" Command="ApplicationCommands.SaveAs" />
+                    </ToolBar>
+                    <!--<Button x:Name="CopyToClipbourdButton3" Command="ApplicationCommands.Copy" Margin="5" Content="Copy To Clipboard" IsDefault="True" TabIndex="5"/>-->
+                    <ScrollViewer  VerticalScrollBarVisibility="Visible" >
+                        <TextBox TabIndex="2" Text="{Binding RepositoryCode}" Background="NavajoWhite" BorderThickness="0"  Margin="10,10,10,10"/>
+                    </ScrollViewer>
+                </StackPanel>
+
+            </TabItem>
+            <TabItem Header="Controllers" TabIndex="9">
+                <StackPanel>
+                    <Button x:Name="CopyToClipbourdButton4"  Command="ApplicationCommands.Copy" Margin="5" Content="Copy To Clipboard" TabIndex="5"/>
+                    <ScrollViewer  VerticalScrollBarVisibility="Visible" >
+                        <TextBox TabIndex="3" Text="{Binding ControllerCode}" Background="NavajoWhite" BorderThickness="0"  Margin="10,10,10,10"/>
+                    </ScrollViewer>
+                </StackPanel >
+            </TabItem>
+            <TabItem Header="Entities" TabIndex="10">
+                <StackPanel>
+                    <Button x:Name="CopyToClipbourdButton5" Command="ApplicationCommands.Copy"  Margin="5" Content="Copy To Clipboard"  TabIndex="5"/>
+                    <ScrollViewer  VerticalScrollBarVisibility="Visible" >
+                        <TextBox TabIndex="4" Text="{Binding EntityCode}" Background="NavajoWhite"  BorderThickness="0"  Margin="10,10,10,10"/>
+                    </ScrollViewer> 
+                    </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>
