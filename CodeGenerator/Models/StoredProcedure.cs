@@ -225,7 +225,7 @@ namespace CodeGenerator
             {
                 using (var command = connection.CreateCommand())
                 {
-                    var query = $@"SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES ";
+                    var query = $@"SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES ORDER BY ROUTINE_NAME";
                     // if (!string.IsNullOrEmpty(searchTerm)) query += $"WHERE ROUTINE_NAME LIKE '{searchTerm}'";
                   /*  query +=
                         @" where routine_name in 
