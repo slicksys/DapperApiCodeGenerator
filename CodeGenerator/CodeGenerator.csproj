@@ -105,6 +105,10 @@
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Page Include="Assets\AbilityTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DalView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -172,6 +176,15 @@
   <ItemGroup>
     <Resource Include="Assets\copy-512.png" />
     <Resource Include="Assets\devil_icon_256px.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Screenshot1.png" />
+    <Resource Include="Assets\Screenshot2.png" />
+    <Resource Include="Assets\Screenshot3.png" />
+    <Resource Include="Assets\Screenshot4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\devil-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
